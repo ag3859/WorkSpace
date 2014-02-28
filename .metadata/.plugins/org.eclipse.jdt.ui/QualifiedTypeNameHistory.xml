@@ -8,6 +8,7 @@
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.apache.hadoop.conf.Configuration"/>
-<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.Job"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.mapreduce.Job"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.fs.Path"/>
 </qualifiedTypeNameHistroy>
