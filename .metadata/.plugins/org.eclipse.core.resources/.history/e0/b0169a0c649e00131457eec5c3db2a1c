@@ -1,0 +1,38 @@
+package assign3PageRank;
+
+// cc MaxTemperatureReducer Reducer for maximum temperature example
+// vv MaxTemperatureReducer
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class PageRankReducer
+  extends Reducer<Text, Text, Text, Text> {
+  
+  @Override
+  public void reduce(Text key, Iterable<Text> values,
+      Context context)
+      throws IOException, InterruptedException {
+    
+    String Outlinks = "";
+    double TotalPR = 0;
+    for (Text value : values) {
+    	String[] mapperOutput = value.toString().split(" ");
+    	if(mapperOutput.length==2)
+    	{
+    		if (isNumeric(mapperOutput[1]))
+    			TotalPR += Double.parseDouble(mapperOutput[2]);    		
+    	}
+    	else 
+    		Outlinks = value.toString();
+    }
+    context.write(key, new Text(Outlinks + " " + TotalPR));
+  }
+  public static boolean isNumeric(String str)
+	{
+	  return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+	}
+}
+// ^^ WordCountMapperReducer

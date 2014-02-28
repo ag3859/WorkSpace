@@ -1,0 +1,56 @@
+package assign2;
+
+//import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.util.StringUtils;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+/*		String testingString = "31-Dec-14,3:00PM,#Hackatopia,Designers, Developers, Doers, don't miss this upcoming Chicago hackathon Chicago";
+		List<String> tokens = new ArrayList<String>();
+		tokens.add("Dec");
+		tokens.add("hackathon");
+		tokens.add("Chicago");
+		tokens.add("Java");
+		//tokens.add("Hackatopia");
+		
+		String patternString = "\\b(" + StringUtils.join("|", tokens) + ")\\b";
+		Pattern pattern = Pattern.compile(patternString);
+		Matcher matcher = pattern.matcher(testingString);
+		
+		while (matcher.find()) {
+		    System.out.println(matcher.group());
+		}
+			
+		System.out.println(testingString);*/
+		
+		String []outBoundEntry = new String("D A B C E F 0.166667").split(" ");
+		
+		
+		
+		
+		//System.out.println(Double.parseDouble(array[1]).getClass());
+		//System.out.println(array.toString());
+		//String []outBoundEntry = value.toString().split(" ");
+		  
+		  StringBuffer sb = new StringBuffer("");
+		  
+		  for(int outBoundListIndex = 1; outBoundListIndex<outBoundEntry.length-1; outBoundListIndex++)
+		  {
+			  sb = sb.append(outBoundEntry[outBoundListIndex]);
+			  double outBoundPR = Double.parseDouble(outBoundEntry[outBoundEntry.length-1])/(outBoundEntry.length-2);
+			  System.out.println(outBoundEntry[outBoundListIndex] + " :: " + outBoundEntry[0]+" "+outBoundPR);
+		  }
+		  
+		  System.out.println(outBoundEntry[0] + ":" + sb);
+		
+		
+	}
+}
